@@ -26,13 +26,13 @@ namespace MathAPI.Controllers
         // Adds to number together
         [Route("/multiply")]
         [HttpGet]
-        public ObjectResult Multiply(int a, int b)
+        public ObjectResult Multiply(int? a, int? b)
         {
             if (a == null || b == null)
             {
                 return BadRequest("U need to provide both an 'a' and a 'b' parameter");
             }
-            return Ok(MathHelper.Multiply(a, b));
+            return Ok(MathHelper.Multiply(a ?? 0, b ?? 0));
         }
     }
 }

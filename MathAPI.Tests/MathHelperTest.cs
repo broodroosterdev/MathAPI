@@ -4,10 +4,6 @@ namespace MathAPI.Tests
 {
     public class MathHelperTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
         [TestCase(3, 5, 8)]
@@ -15,7 +11,10 @@ namespace MathAPI.Tests
         [TestCase(-3, 50, 47)]
         public void TestAddingNumbers(int a, int b, int expected)
         {
+            //Act
             var result = MathHelper.Add(a, b);
+            
+            //Assert
             Assert.AreEqual(expected, result);
         }
 
@@ -25,7 +24,10 @@ namespace MathAPI.Tests
         [TestCase(-3,50,-150)]
         public void TestMultiplyingNumbers(int a, int b, int expected)
         {
+            //Act
             var result = MathHelper.Multiply(a, b);
+            
+            //Assert
             Assert.AreEqual(expected, result);
         }
     }
